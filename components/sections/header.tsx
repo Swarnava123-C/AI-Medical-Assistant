@@ -31,23 +31,23 @@ export default function Header() {
   return (
     <header
       className={
-        "relative sticky top-0 z-50 py-2 bg-background/60 backdrop-blur px-2 sm:px-4"
+        "relative  top-0 z-50 py-2 bg-background/60 backdrop-blur px-2 sm:px-4"
       }
     >
       <div className="flex justify-between items-center container">
         <Link
           href="/"
           title="brand-logo"
-          className="relative mr-6 flex items-center space-x-2 px-0 sm:pl-20"
+          className="relative flex items-center space-x-2 mr-6 px-0 sm:pl-20"
         >
           <Icons.logo className="w-auto h-[40px]" />
           <span className="font-bold text-xl">{siteConfig.name}</span>
         </Link>
 
         <div className="hidden lg:block">
-          <div className="flex items-center ">
+          <div className="flex items-center">
 
-            <div className="gap-2 flex">
+            <div className="flex gap-2">
               <Link
                 href={user ? "/dashboard" : "/sign-in"}
                 className={buttonVariants({ variant: "outline" })}
@@ -65,7 +65,7 @@ export default function Header() {
                     "w-full sm:w-auto text-background flex gap-2"
                   )}
                 >
-                  <Icons.logo className="h-6 w-6" />
+                  <Icons.logo className="w-6 h-6" />
                   Start a Consultation
                 </Link>
               )
@@ -74,7 +74,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="mt-2 cursor-pointer block lg:hidden">
+        <div className="lg:hidden block mt-2 cursor-pointer">
           <div className="flex items-center gap-4">
             <Link
               href={user ? "/dashboard" : "/sign-in"}
@@ -88,7 +88,7 @@ export default function Header() {
       </div>
       <hr
         className={cn(
-          "absolute w-full bottom-0 transition-opacity duration-300 ease-in-out",
+          "bottom-0 absolute w-full transition-opacity duration-300 ease-in-out",
           addBorder ? "opacity-100" : "opacity-0"
         )}
       />

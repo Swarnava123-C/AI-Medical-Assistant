@@ -13,16 +13,16 @@ import { useUser } from "@clerk/nextjs";
 function HeroPill() {
   return (
     <motion.div
-      className="flex w-auto items-center space-x-2 rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent whitespace-pre"
+      className="flex items-center space-x-2 bg-primary/20 px-2 py-1 rounded-full ring-1 ring-accent w-auto whitespace-pre"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="w-fit rounded-full bg-accent px-2 py-0.5 text-center text-xs font-medium text-primary sm:text-sm">
-        📣 Announcement
+      <div className="bg-accent px-2 py-0.5 rounded-full w-fit font-medium text-primary text-xs sm:text-sm text-center">
+        📣 Now Live
       </div>
-      <p className="text-xs font-medium text-primary sm:text-sm">
-        Introducing Doctor AI Agent
+      <p className="font-medium text-primary text-xs sm:text-sm">
+        Introducing the NeuroMedix AI Medical Assistance System
       </p>
       <svg
         width="12"
@@ -43,9 +43,9 @@ function HeroPill() {
 
 function HeroTitles() {
   return (
-    <div className="flex w-full max-w-2xl flex-col space-y-4 overflow-hidden pt-8">
+    <div className="flex flex-col space-y-4 pt-8 w-full max-w-2xl overflow-hidden">
       <motion.h1
-        className="text-center text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-6xl"
+        className="font-medium text-foreground text-4xl sm:text-5xl md:text-6xl text-center leading-tight"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
         animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
         transition={{
@@ -54,10 +54,10 @@ function HeroTitles() {
           staggerChildren: 0.2,
         }}
       >
-        {["Your", "AI", "Medical", "Assistant"].map((text, index) => (
+        {["Your", "AI", "Driven", "Medical","Voice" , "Companion"].map((text, index) => (
           <motion.span
             key={index}
-            className="inline-block px-1 md:px-2 text-balance font-semibold"
+            className="inline-block px-1 md:px-2 font-semibold text-balance"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -71,7 +71,7 @@ function HeroTitles() {
         ))}
       </motion.h1>
       <motion.p
-        className="mx-auto max-w-2xl text-center text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-9 text-balance"
+        className="mx-auto max-w-2xl text-muted-foreground text-lg sm:text-xl text-center text-balance leading-7 sm:leading-9"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -80,7 +80,7 @@ function HeroTitles() {
           ease: [0.16, 1, 0.3, 1],
         }}
       >
-        Experience real-time voice conversations with an AI medical assistant.
+        Engage in real-time voice consultations with our AI-powered medical agent.
       </motion.p>
     </div>
   );
@@ -92,7 +92,7 @@ function HeroCTA() {
   return (
     <>
       <motion.div
-        className="mx-auto mt-6 flex w-full max-w-2xl flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+        className="flex sm:flex-row flex-col justify-center items-center sm:space-x-4 space-y-4 sm:space-y-0 mx-auto mt-6 w-full max-w-2xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -104,17 +104,17 @@ function HeroCTA() {
             "w-full sm:w-auto text-background flex gap-2"
           )}
         >
-          <Icons.logo className="h-6 w-6" />
+          <Icons.logo className="w-6 h-6" />
           {user ? "Dashboard" : "Start a consultation"}
         </Link>
       </motion.div>
       <motion.p
-        className="mt-5 text-sm text-muted-foreground"
+        className="mt-5 text-muted-foreground text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.0, duration: 0.8 }}
       >
-        10 credits free. No credit card required.
+        Start with 10 free credits — no credit card necessary.
       </motion.p>
     </>
   );
@@ -123,18 +123,18 @@ function HeroCTA() {
 function HeroImage() {
   return (
     <motion.div
-      className="relative mx-auto flex w-full items-center justify-center"
+      className="relative flex justify-center items-center mx-auto w-full"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >
       <HeroVideoDialog
         animationStyle="from-center"
-        videoSrc="https://imagekit.io/player/embed/rmyd10ywi/Recording%202025-06-29%20204016.mp4?updatedAt=1751212929355&thumbnail=https%3A%2F%2Fik.imagekit.io%2Frmyd10ywi%2FRecording%25202025-06-29%2520204016.mp4%2Fik-thumbnail.jpg%3FupdatedAt%3D1751212929355&updatedAt=1751212929355"
+        videoSrc="https://ik.imagekit.io/pv4mornkt/AI%20medical%20agent%20(1).mov"
         // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         thumbnailSrc="/dashboard.png"
         thumbnailAlt="Hero Video"
-        className="border rounded-lg shadow-lg max-w-screen-lg mt-16"
+        className="shadow-lg mt-16 border rounded-lg max-w-screen-lg"
       />
     </motion.div>
   );
@@ -143,12 +143,12 @@ function HeroImage() {
 export default function Hero2() {
   return (
     <section id="hero">
-      <div className="relative flex w-full flex-col items-center justify-start px-4 pt-32 sm:px-6 sm:pt-24 md:pt-32 lg:px-8">
+      <div className="relative flex flex-col justify-start items-center px-4 sm:px-6 lg:px-8 pt-32 sm:pt-24 md:pt-32 w-full">
         <HeroPill />
         <HeroTitles />
         <HeroCTA />
         <HeroImage />
-        <div className="pointer-events-none absolute inset-x-0 -bottom-12 h-1/3 bg-gradient-to-t from-background via-background to-transparent lg:h-1/4"></div>
+        <div className="-bottom-12 absolute inset-x-0 bg-gradient-to-t from-background via-background to-transparent h-1/3 lg:h-1/4 pointer-events-none"></div>
       </div>
     </section>
   );

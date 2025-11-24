@@ -1,14 +1,13 @@
 import { Icons } from "@/components/icons";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
-import { FaTwitter, FaLinkedin, FaGithub, FaCode } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="border-t mt-20">
-      <div className="max-w-6xl mx-auto py-8 px-5">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+    <footer className="mt-20 border-t">
+      <div className="mx-auto px-5 py-8 max-w-6xl">
+        <div className="flex md:flex-row flex-col justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Link
               href="/"
@@ -21,20 +20,37 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center space-x-6">
-            <Link href="https://x.com/sumamakhan761" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              href="https://x.com/SWARNAVAMA53967"
+              aria-label="Twitter"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              target="_blank"
+            >
               <FaTwitter size={20} />
             </Link>
-            <Link href="https://linkedin.com/in/sumama-khan" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
+
+            <Link
+              href="https://www.linkedin.com/in/swarnava-malakar-9b0344327/"
+              aria-label="LinkedIn"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              target="_blank"
+            >
               <FaLinkedin size={20} />
             </Link>
-            <Link href="https://sumama-portfolio-gold.vercel.app" aria-label="Portfolio" className="text-muted-foreground hover:text-primary transition-colors">
-              <CgWebsite size={20} />
+
+            <Link
+              href="https://github.com/Swarnava123-C"
+              aria-label="GitHub"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              target="_blank"
+            >
+              <FaGithub size={20} />
             </Link>
           </div>
         </div>
 
-        <div className="text-center mt-6">
-          <span className="text-sm text-muted-foreground">
+        <div className="mt-6 text-center">
+          <span className="text-muted-foreground text-sm">
             Copyright © {new Date().getFullYear()}{" "}
             <Link href="/" className="hover:text-primary transition-colors">
               {siteConfig.name}
@@ -45,3 +61,4 @@ export default function Footer() {
     </footer>
   );
 }
+
